@@ -3,7 +3,7 @@
 const VAT_RATE = 21; // VAT percentage
 const BASE_SURCHARGE = 0.31; // Base surcharge per unit
 const QUANTITY_SURCHARGE = 65; // Additional surcharge divided by quantity
-const ADDITIONAL_FACTOR = 1.05; // Additional pricing factor
+const ADDITIONAL_FACTOR = 0.98; // Additional pricing factor
 
 // Profit margins based on quantity
 const PROFIT_MARGIN_SMALL = 0.62; // For quantity < 51

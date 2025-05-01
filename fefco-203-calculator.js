@@ -339,12 +339,21 @@ function calcformCalculate() {
                 field.addEventListener('input', updateWarningAndButton);
             });
 
-            document.getElementById('submit-request').addEventListener('click', function(event) {
-                event.preventDefault();
-                document.getElementById('submit-request').style.display = 'none';
-                document.getElementById('loading-indicator').style.display = 'block';
-                document.querySelector('form').submit();
-            });
+document.getElementById('submit-request').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    // Laatste berekening uitvoeren zodat hidden fields juist zijn
+    calcformCalculate();
+
+    document.getElementById('submit-request').style.display = 'none';
+    document.getElementById('loading-indicator').style.display = 'block';
+
+    // Kleine delay zodat de browser .value updates kan verwerken
+    setTimeout(() => {
+        document.querySelector('form').submit();
+    }, 50);
+});
+
 
             // Initial calculation and warning/button state update
             calcformCalculate();
